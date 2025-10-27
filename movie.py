@@ -38,5 +38,33 @@ def load_movies(filename):
     Movie.show_count()
 
     f.close()
-load_movies("movie.csv")
 
+def add_movie():
+    print("\n 새 영화 추가")
+    title = input("영화제목:")
+    duration = int(input("러닝타임:"))
+    age= int (inout("관람 가능 나이:"))
+
+
+    new_movie= Movie(title,duration,age)
+    movies.append(new_movie)
+
+    print("\n 새 영화 추가")
+    new_movie.display_info()
+
+
+def save_movie(filename):
+    f= open(filename, "w", newline="",encoding="utf-8-sig")
+    writer=csv.writer(f)
+
+    writer.writerow(["title","duration", "age"])
+
+    for m in movies:
+        writer.writerow([m.title, m.duration, m.age])
+
+    print("파일이 업뎃")
+    f.colse()
+
+
+load_movies("movie.csv")
+add_movie()
