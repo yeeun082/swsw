@@ -15,7 +15,7 @@ class Movie:
         print(f"제목:{self.title}, 러닝타임:{self.duration}, 제한 연령:{self.age}")
 
 
-    @claddmethos
+ @classmethod
     def show_count(cls):
        print(f"현재 상영 중인 영화는 {cls.count}개 입니다.")
 
@@ -63,7 +63,7 @@ def save_movie(filename):
         writer.writerow([m.title, m.duration, m.age])
 
     print("파일이 업뎃")
-    f.colse()
+    f.close()
 
 
 load_movies("movie.csv")
